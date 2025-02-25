@@ -61,19 +61,35 @@ optionsBuilder.UseSqlite("Data Source=INSERIR_O_CAMINHO_DO_BANCO_DE_DADOS\\TechL
         - C:/Users/seu-usuario/TechLibrary/TechLibraryDb.db
     - Salve o arquivo 📄**TechLibraryDbContext.cs**
 
-### **3. Executar a API**
-- **3.1.** No VSCode, abra o terminal integrado.
-- **3.2.** Navegue até o diretório da API com os comandos:
+### **3. Adicionar chave para criptografar e validar o token de acesso 🔑**
+- **3.1.** Acessar o diretório
+    ```
+        📂TechLibrary/
+                └── 📂TechLibrary.Api
+                     └──📂Infraestructure
+                         └──📂Security
+                             └──📂Tokens
+                                 └──📂Access
+                                     └──📄JwtTokenGenerator.cs
+    ```
+- Você deve gerar a senha(key) aleatória com 32 caracteres e sem símbolos
+- Alterar a variável 🔑`signingKey` e inserir a key para criptografar e validar as partes do token de acesso.
+- Copiar a key gerada e alterar também a variável 🔑`signingKey` no arquivo 📄`Program.cs` localizado dentro da pasta 📂TechLibrary.Api do projeto.
+
+
+### **4. Executar a API**
+- **4.1.** No VSCode, abra o terminal integrado.
+- **4.2.** Navegue até o diretório da API com os comandos:
 ```
 cd TechLibrary
 cd .\TechLibrary.Api\
 ```
-- **3.3.** Compile e inicie a API executando:
+- **4.3.** Compile e inicie a API executando:
 ```
 dotnet run
 
 ```
-- **3.4.** Aguarde até que a mensagem abaixo apareça no terminal:
+- **4.4.** Aguarde até que a mensagem abaixo apareça no terminal:
 ```
 info: Microsoft.Hosting.Lifetime[14]
       Now listening on: http://localhost:5163
@@ -86,12 +102,12 @@ info: Microsoft.Hosting.Lifetime[0]
 ```
 - **Anote a URL fornecida**, geralmente algo como: **http://localhost:5163.**
 
-### **4. Testar a API**
-- **4.1.** Com a URL anotada, abra seu navegador e acesse a URL da documentação Swagger da API, por exemplo:
+### **5. Testar a API**
+- **5.1.** Com a URL anotada, abra seu navegador e acesse a URL da documentação Swagger da API, por exemplo:
 ```
 http://localhost:5163/swagger
 ```
-- **4.2.** Explore os endpoints disponíveis para testar as funcionalidades do projeto.
+- **5.2.** Explore os endpoints disponíveis para testar as funcionalidades do projeto.
 
 ### 🏁 **Conclusão**
 Seguindo os passos acima, você configurou e executou o projeto Tech Library com sucesso! 🚀
